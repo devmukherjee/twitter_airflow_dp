@@ -1,0 +1,12 @@
+ssh -i "airflow_etl_key.pem" <your_ec2_ssh_hostname>
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt install python3-venv
+mkdir environments
+sudo python3 -m venv environments/airflow_env
+sudo source environments/airflow_env/bin/activate
+sudo environments/airflow_env/bin/python3 environments/airflow_env/bin/pip install pandas
+sudo environments/airflow_env/bin/python3 environments/airflow_env/bin/pip install s3fs
+sudo environments/airflow_env/bin/python3 environments/airflow_env/bin/pip install apache-airflow
+
+#Reeboot ec2 after this and wait for 10 min before going ahead

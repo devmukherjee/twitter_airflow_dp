@@ -1,0 +1,13 @@
+cd ~
+cd airflow
+sudo nano airflow.cfg
+mkdir twitter_dags
+cd twitter_dags
+sudo nano twitter_etl.py
+sudo nano twitter_dag.py
+sudo source ~/environments/airflow_env/bin/activate
+airflow dags list
+airflow dags reserialize
+airflow dags unpause twitter_dag
+airflow dags test twitter_dag
+airflow scheduler
